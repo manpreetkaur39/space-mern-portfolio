@@ -8,11 +8,18 @@
 body,html,#root{height:100%;margin:0;font-family:Inter,Segoe UI,Roboto,Arial}
 body{background:radial-gradient(ellipse at bottom, #071029 0%, var(--bg) 60%);color:#e6eef6}
 .container{max-width:1100px;margin:0 auto;padding:2rem}
+.nav{background:linear-gradient(90deg,#030416, #071029);border-bottom:1px solid rgba(255,255,255,0.03)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:.6rem 0}
+.brand{font-weight:700}
+.nav .links a{color:var(--accent);margin-left:1rem;text-decoration:none}
+.nav .links a.active{text-decoration:underline}
 .hero{position:relative;overflow:hidden;padding:6rem 0 4rem}
 .hero .container{position:relative;z-index:2}
 .hero h1{font-size:2.6rem;margin:0 0 .5rem}
 .hero p{color:var(--muted);margin:0 0 1rem}
 .btn{background:linear-gradient(90deg,#7dd3fc22,#a78bfa22);border:1px solid #2b6cb0;color:var(--accent);padding:.6rem 1rem;border-radius:8px;text-decoration:none}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--accent)}
+.btn.disabled{opacity:.5;pointer-events:none}
 .stars{position:absolute;inset:0;background-image:radial-gradient(#fff 1px, transparent 1px);background-size:3px 3px;opacity:.15;animation:twinkle 10s linear infinite}
 @keyframes twinkle{0%{transform:translateY(0)}50%{transform:translateY(-10px)}100%{transform:translateY(0)}}
 .projects{padding:2rem 0}
@@ -27,5 +34,61 @@ body{background:radial-gradient(ellipse at bottom, #071029 0%, var(--bg) 60%);co
 .chip{display:inline-block;background:#0b1220;padding:.2rem .5rem;border-radius:999px;margin-right:.4rem;font-size:.8rem}
 .link{display:inline-block;margin-top:.6rem;color:var(--accent);text-decoration:underline}
 .footer{text-align:center;padding:2rem;color:var(--muted)}
+
+/* Conquests / Levels */
+.conquests{padding:2rem 0}
+.levels{display:flex;flex-wrap:wrap;gap:1rem}
+.level{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:1rem;border-radius:10px;flex:1 1 240px}
+.level-num{font-size:.9rem;color:var(--accent);margin-bottom:.4rem}
+.level-actions{margin-top:.6rem;display:flex;gap:.6rem}
+
+/* Socials */
+.social-list{display:flex;gap:.6rem;flex-wrap:wrap}
+.social{background:rgba(255,255,255,0.03);padding:.5rem .8rem;border-radius:8px;text-decoration:none;color:var(--accent)}
+
+/* hierarchical tree links */
+.links-tree{margin-top:1rem}
+.tree, .tree ul{list-style:none;margin:0;padding:0}
+.tree > li {position:relative;padding-left:1rem}
+.tree > li:before{content:'';position:absolute;left:0;top:9px;width:8px;height:2px;background:rgba(255,255,255,0.06)}
+.tree li ul li{padding-left:1rem;position:relative}
+.tree a{color:var(--accent);text-decoration:underline}
+
+/* Home big CTA buttons */
+.home-choices{padding:3rem 0}
+.home-grid{display:flex;gap:2rem;justify-content:center}
+.big-cta{font-size:1.25rem;padding:1.2rem 2rem;border-radius:12px;border:0;cursor:pointer;background:linear-gradient(90deg,#7dd3fc22,#a78bfa22);color:var(--accent)}
+.big-cta.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06)}
+
+/* Cosmic Scene */
+.cosmic-scene{position:absolute;inset:0;pointer-events:none;transform:translateZ(0);--mx:0px;--my:0px}
+.cosmic-scene .nebula{position:absolute;filter:blur(40px);opacity:.45;mix-blend-mode:screen}
+.cosmic-scene .nebula-1{width:600px;height:300px;right:-100px;top:20px;background:radial-gradient(circle at 30% 30%, #7c3aed66, #06b6d466 40%, transparent 60%)}
+.cosmic-scene .nebula-2{width:500px;height:300px;left:-80px;bottom:-20px;background:radial-gradient(circle at 40% 40%, #f9731666, #60a5fa44 40%, transparent 60%)}
+.cosmic-scene .star-layer{position:absolute;inset:0;background-repeat:repeat;background-position:0 0;opacity:.6}
+.cosmic-scene .stars-small{background-image:radial-gradient(#fff 1px, transparent 1px);background-size:2px 2px;opacity:.2;transform:translate(var(--mx), var(--my));animation:drift 80s linear infinite}
+.cosmic-scene .stars-mid{background-image:radial-gradient(#fff 1.5px, transparent 1.5px);background-size:4px 4px;opacity:.12;transform:translate(calc(var(--mx) * .6), calc(var(--my) * .6));animation:drift 140s linear infinite}
+.cosmic-scene .stars-big{background-image:radial-gradient(#fff 2px, transparent 2px);background-size:8px 8px;opacity:.06;transform:translate(calc(var(--mx) * .3), calc(var(--my) * .3));animation:drift 220s linear infinite}
+
+@keyframes drift{from{transform:translate(0,0)}to{transform:translate(-2000px,0)}}
+
+.cosmic-scene .orbit{position:absolute;border-radius:50%;pointer-events:none}
+.cosmic-scene .orbit-1{width:220px;height:220px;right:8%;top:30%;animation:spin 18s linear infinite}
+.cosmic-scene .orbit-2{width:120px;height:120px;left:12%;top:18%;animation:spin 28s linear reverse infinite}
+.cosmic-scene .planet{width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#60a5fa,#0369a1);position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}
+.cosmic-scene .planet-moon{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#f3f4f6,#cbd5e1);position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}
+.cosmic-scene .satellite{width:10px;height:6px;background:#fff;position:absolute;right:-18px;top:6px;border-radius:2px;box-shadow:0 0 6px #7dd3fc}
+
+@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+
+.rocket-btn{position:absolute;right:6%;bottom:8%;width:64px;height:64px;border-radius:999px;border:0;background:linear-gradient(180deg,#ff7a7a,#ffb86b);cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px rgba(0,0,0,0.5);pointer-events:auto}
+.rocket-btn svg{filter:drop-shadow(0 6px 10px rgba(0,0,0,0.6))}
+.rocket-btn.launch{animation:rocket-launch 2s ease forwards}
+
+@keyframes rocket-launch{
+  0%{transform:translateY(0) scale(1)}
+  50%{transform:translateY(-40vh) scale(.9)}
+  100%{transform:translateY(-120vh) scale(.6);opacity:0}
+}
 
 /* small images folder note - Vite will serve /public assets from root */
