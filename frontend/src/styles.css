@@ -1,0 +1,31 @@
+:root{
+  --bg: #050814;
+  --card: rgba(255,255,255,0.04);
+  --muted: #9aa4b2;
+  --accent: #7dd3fc;
+}
+*{box-sizing:border-box}
+body,html,#root{height:100%;margin:0;font-family:Inter,Segoe UI,Roboto,Arial}
+body{background:radial-gradient(ellipse at bottom, #071029 0%, var(--bg) 60%);color:#e6eef6}
+.container{max-width:1100px;margin:0 auto;padding:2rem}
+.hero{position:relative;overflow:hidden;padding:6rem 0 4rem}
+.hero .container{position:relative;z-index:2}
+.hero h1{font-size:2.6rem;margin:0 0 .5rem}
+.hero p{color:var(--muted);margin:0 0 1rem}
+.btn{background:linear-gradient(90deg,#7dd3fc22,#a78bfa22);border:1px solid #2b6cb0;color:var(--accent);padding:.6rem 1rem;border-radius:8px;text-decoration:none}
+.stars{position:absolute;inset:0;background-image:radial-gradient(#fff 1px, transparent 1px);background-size:3px 3px;opacity:.15;animation:twinkle 10s linear infinite}
+@keyframes twinkle{0%{transform:translateY(0)}50%{transform:translateY(-10px)}100%{transform:translateY(0)}}
+.projects{padding:2rem 0}
+.projects h2{margin-top:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+.card{background:var(--card);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;min-height:220px}
+.card-image{height:140px;background-size:cover;background-position:center}
+.card-body{padding:1rem}
+.card h3{margin:.25rem 0}
+.muted{color:var(--muted)}
+.tech{margin-top:.5rem}
+.chip{display:inline-block;background:#0b1220;padding:.2rem .5rem;border-radius:999px;margin-right:.4rem;font-size:.8rem}
+.link{display:inline-block;margin-top:.6rem;color:var(--accent);text-decoration:underline}
+.footer{text-align:center;padding:2rem;color:var(--muted)}
+
+/* small images folder note - Vite will serve /public assets from root */
